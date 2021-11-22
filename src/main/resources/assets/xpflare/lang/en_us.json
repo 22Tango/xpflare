@@ -1,4 +1,12 @@
 {
+  "item.minecraft.tipped_arrow.effect.long_ghostwalking": "Arrow of Long Ghostwalking",
+  "item.minecraft.lingering_potion.effect.ghostwalking": "Lingering Potion of Ghostwalking",
+  "item.minecraft.potion.effect.long_ghostwalking": "Potion of Long Ghostwalking",
+  "item.minecraft.splash_potion.effect.ghostwalking": "Splash Potion of Ghostwalking",
+  "item.minecraft.lingering_potion.effect.long_ghostwalking": "Lingering Potion of Long Ghostwalking",
+  "item.minecraft.potion.effect.ghostwalking": "Potion of Ghostwalking",
+  "item.minecraft.tipped_arrow.effect.ghostwalking": "Arrow of Ghostwalking",
   "effect.brittle": "Brittle",
+  "item.minecraft.splash_potion.effect.long_ghostwalking": "Splash Potion of Long Ghostwalking",
   "effect.ghostwalker": "Ghostwalker"
 }

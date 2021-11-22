@@ -6,10 +6,18 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 
+import net.minecraft.world.World;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.potion.EffectType;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effect;
+import net.minecraft.entity.ai.attributes.AttributeModifierManager;
+import net.minecraft.entity.LivingEntity;
+
+import net.mcreator.xpflare.procedures.GhostwalkerEffectStartedappliedProcedure;
+
+import java.util.Map;
+import java.util.HashMap;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GhostwalkerPotionEffect {
@@ -39,7 +47,7 @@ public class GhostwalkerPotionEffect {
 
 		@Override
 		public boolean isInstant() {
-			return true;
+			return false;
 		}
 
 		@Override
@@ -55,6 +63,19 @@ public class GhostwalkerPotionEffect {
 		@Override
 		public boolean shouldRenderHUD(EffectInstance effect) {
 			return true;
+		}
+
+		@Override
+		public void applyAttributesModifiersToEntity(LivingEntity entity, AttributeModifierManager attributeMapIn, int amplifier) {
+			World world = entity.world;
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				GhostwalkerEffectStartedappliedProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override

@@ -41,6 +41,6 @@ public class GhostSpawnProcedure {
 		if (entity instanceof LivingEntity)
 			((LivingEntity) entity).clearActivePotions();
 		if (entity instanceof LivingEntity)
-			((LivingEntity) entity).addPotionEffect(new EffectInstance(GhostwalkerPotionEffect.potion, (int) 6000, (int) 1));
+			((LivingEntity) entity).addPotionEffect(new EffectInstance(GhostwalkerPotionEffect.potion, (int) 6000, (int) 1, (false), (false)));
 	}
 }

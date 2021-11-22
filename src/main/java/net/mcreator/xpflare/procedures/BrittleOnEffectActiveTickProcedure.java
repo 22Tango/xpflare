@@ -1,5 +1,6 @@
 package net.mcreator.xpflare.procedures;
 
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -26,12 +27,15 @@ public class BrittleOnEffectActiveTickProcedure {
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).removePotionEffect(BrittlePotionEffect.potion);
 			}
+			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("The Flare is satiated."), (true));
+			}
 		} else {
 			{
 				ItemStack _ist = ((entity instanceof LivingEntity)
 						? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 0))
 						: ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) 50, new Random(), null)) {
+				if (_ist.attemptDamageItem((int) 5, new Random(), null)) {
 					_ist.shrink(1);
 					_ist.setDamage(0);
 				}
@@ -40,7 +44,7 @@ public class BrittleOnEffectActiveTickProcedure {
 				ItemStack _ist = ((entity instanceof LivingEntity)
 						? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 1))
 						: ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) 50, new Random(), null)) {
+				if (_ist.attemptDamageItem((int) 5, new Random(), null)) {
 					_ist.shrink(1);
 					_ist.setDamage(0);
 				}
@@ -49,7 +53,7 @@ public class BrittleOnEffectActiveTickProcedure {
 				ItemStack _ist = ((entity instanceof LivingEntity)
 						? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 2))
 						: ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) 50, new Random(), null)) {
+				if (_ist.attemptDamageItem((int) 5, new Random(), null)) {
 					_ist.shrink(1);
 					_ist.setDamage(0);
 				}
@@ -58,14 +62,14 @@ public class BrittleOnEffectActiveTickProcedure {
 				ItemStack _ist = ((entity instanceof LivingEntity)
 						? ((LivingEntity) entity).getItemStackFromSlot(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, (int) 3))
 						: ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) 50, new Random(), null)) {
+				if (_ist.attemptDamageItem((int) 5, new Random(), null)) {
 					_ist.shrink(1);
 					_ist.setDamage(0);
 				}
 			}
 			{
 				ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-				if (_ist.attemptDamageItem((int) 25, new Random(), null)) {
+				if (_ist.attemptDamageItem((int) 10, new Random(), null)) {
 					_ist.shrink(1);
 					_ist.setDamage(0);
 				}

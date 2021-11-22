@@ -1,0 +1,23 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Brewing",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "brewingInputStack": {
+      "value": "POTION:INVISIBILITY"
+    },
+    "brewingIngredientStack": {
+      "value": "Items.EXPERIENCE_BOTTLE"
+    },
+    "brewingReturnStack": {
+      "value": "POTION:CUSTOM:Ghostwalking"
+    },
+    "name": "gostwalking_brewing_recipe",
+    "namespace": "mod"
+  }
+}

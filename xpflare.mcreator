@@ -91,6 +91,94 @@
           }
         ]
       }
+    },
+    {
+      "name": "GhostwalkerEffectStartedapplied",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ghostwalker_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FlareCommandExecuted",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flare_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Flare",
+      "type": "command",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "flare"
+    },
+    {
+      "name": "Ghostwalking",
+      "type": "potion",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ghostwalking"
+    },
+    {
+      "name": "GostwalkingBrewingRecipe",
+      "type": "recipe",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gostwalking_brewing_recipe"
+    },
+    {
+      "name": "LongGhostwalking",
+      "type": "potion",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "long_ghostwalking"
+    },
+    {
+      "name": "LongGostwalkingBrew",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "long_gostwalking_brew"
+    },
+    {
+      "name": "LongGostwalkingBrew2",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "long_gostwalking_brew_2"
     }
   ],
   "variable_elements": [
@@ -99,12 +187,26 @@
       "type": "number",
       "scope": "global",
       "value": "0"
+    },
+    {
+      "name": "xpflarerate",
+      "type": "number",
+      "scope": "global",
+      "value": "2400.0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.minecraft.tipped_arrow.effect.long_ghostwalking": "Arrow of Long Ghostwalking",
+      "item.minecraft.lingering_potion.effect.ghostwalking": "Lingering Potion of Ghostwalking",
+      "item.minecraft.potion.effect.long_ghostwalking": "Potion of Long Ghostwalking",
+      "item.minecraft.splash_potion.effect.ghostwalking": "Splash Potion of Ghostwalking",
+      "item.minecraft.lingering_potion.effect.long_ghostwalking": "Lingering Potion of Long Ghostwalking",
+      "item.minecraft.potion.effect.ghostwalking": "Potion of Ghostwalking",
+      "item.minecraft.tipped_arrow.effect.ghostwalking": "Arrow of Ghostwalking",
       "effect.brittle": "Brittle",
+      "item.minecraft.splash_potion.effect.long_ghostwalking": "Splash Potion of Long Ghostwalking",
       "effect.ghostwalker": "Ghostwalker"
     }
   },

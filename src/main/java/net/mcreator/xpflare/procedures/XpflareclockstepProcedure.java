@@ -44,7 +44,7 @@ public class XpflareclockstepProcedure {
 			return;
 		}
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((XpflareModVariables.xpflareclock >= 2400)) {
+		if ((XpflareModVariables.xpflareclock == XpflareModVariables.xpflarerate)) {
 			{
 				List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
 				for (Entity entityiterator : _players) {
@@ -64,10 +64,10 @@ public class XpflareclockstepProcedure {
 							if (entityiterator instanceof PlayerEntity)
 								((PlayerEntity) entityiterator).addExperienceLevel(-((int) 1));
 							if (entityiterator instanceof PlayerEntity && !entityiterator.world.isRemote()) {
-								((PlayerEntity) entityiterator).sendStatusMessage(new StringTextComponent("The Flare is Satiated"), (false));
+								((PlayerEntity) entityiterator).sendStatusMessage(new StringTextComponent("The Flare is satiated."), (true));
 							}
 						} else {
-							if ((new Object() {
+							if ((!(new Object() {
 								boolean check(Entity _entity) {
 									if (_entity instanceof LivingEntity) {
 										Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -78,19 +78,39 @@ public class XpflareclockstepProcedure {
 									}
 									return false;
 								}
-							}.check(entityiterator))) {
+							}.check(entityiterator)))) {
 								if (entityiterator instanceof LivingEntity)
-									((LivingEntity) entityiterator).addPotionEffect(new EffectInstance(Effects.WITHER, (int) 2400, (int) 2));
+									((LivingEntity) entityiterator).addPotionEffect(
+											new EffectInstance(BrittlePotionEffect.potion, (int) (XpflareModVariables.xpflarerate + 2), (int) 0));
 								if (entityiterator instanceof PlayerEntity && !entityiterator.world.isRemote()) {
-									((PlayerEntity) entityiterator).sendStatusMessage(new StringTextComponent("The Wither Comes!"), (true));
+									((PlayerEntity) entityiterator).sendStatusMessage(
+											new StringTextComponent("Corruption! Armor and tools in-hand begin to decay."), (true));
+								}
+							} else if (((new Object() {
+								int check(Entity _entity) {
+									if (_entity instanceof LivingEntity) {
+										Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
+										for (EffectInstance effect : effects) {
+											if (effect.getPotion() == BrittlePotionEffect.potion)
+												return effect.getAmplifier();
+										}
+									}
+									return 0;
+								}
+							}.check(entityiterator)) == 0)) {
+								if (entityiterator instanceof LivingEntity)
+									((LivingEntity) entityiterator).addPotionEffect(
+											new EffectInstance(BrittlePotionEffect.potion, (int) (XpflareModVariables.xpflarerate + 2), (int) 1));
+								if (entityiterator instanceof PlayerEntity && !entityiterator.world.isRemote()) {
+									((PlayerEntity) entityiterator)
+											.sendStatusMessage(new StringTextComponent("The Blight! Tools and armor are cumbling!"), (true));
 								}
 							} else {
 								if (entityiterator instanceof LivingEntity)
-									((LivingEntity) entityiterator)
-											.addPotionEffect(new EffectInstance(BrittlePotionEffect.potion, (int) 2400, (int) 1));
+									((LivingEntity) entityiterator).addPotionEffect(
+											new EffectInstance(Effects.WITHER, (int) (XpflareModVariables.xpflarerate + 2), (int) 1));
 								if (entityiterator instanceof PlayerEntity && !entityiterator.world.isRemote()) {
-									((PlayerEntity) entityiterator)
-											.sendStatusMessage(new StringTextComponent("The Blight! Tools and Armor are Cumbling!"), (true));
+									((PlayerEntity) entityiterator).sendStatusMessage(new StringTextComponent("The Flare Consumes!"), (true));
 								}
 							}
 						}

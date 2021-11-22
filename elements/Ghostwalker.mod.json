@@ -8,10 +8,13 @@
       "value": -574,
       "falpha": 0.0
     },
-    "isInstant": true,
+    "isInstant": false,
     "isBad": false,
     "isBenefitical": true,
     "renderStatusInInventory": true,
-    "renderStatusInHUD": true
+    "renderStatusInHUD": true,
+    "onStarted": {
+      "name": "GhostwalkerEffectStartedapplied"
+    }
   }
 }
