@@ -1,0 +1,23 @@
+{
+  "_fv": 24,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Brittle",
+    "icon": "brittletexture.png",
+    "color": {
+      "value": -13563136,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": true,
+    "isBenefitical": false,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "BrittleOnEffectActiveTick"
+    },
+    "activeTickCondition": {
+      "name": "BrittleActiveTickCondition"
+    }
+  }
+}
